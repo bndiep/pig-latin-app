@@ -27,9 +27,6 @@ class App extends Component {
     // no need to change this variable
     let translatedWordsArray = []
 
-    // need array to temporarily hold our split strings
-    let splitWord = []
-
     // taking the user input and spliting the text into an array of words
     let splitUserInput = userInput.toLowerCase().split(" ")
 
@@ -42,29 +39,35 @@ class App extends Component {
 
       // first we break the string into an array of letters
       // currentWord.split(" ");
-
-      if (currentWord[0] === 'a' || currentWord[0] === 'e' || currentWord[0] === 'i' || currentWord[0] === 'o' || currentWord[0] === 'u') {
-        // console.log(currentWord + "way");
-        currentWord += "way";
-      }
-      
-      // for (let i = 0; i < currentWord.length; i++) {
-      //   if (currentWord[i] !== 'a' && currentWord[i] !== 'e' && currentWord[i] !== 'i' && currentWord[i] !== 'o' && currentWord[i] !== 'u') {
-      //
-      //   }
-      // }
-      // currentWord.map(letter, index => {
-      //
-      // })
-      //splitWord = currentWord.split(" ");
-      //splitWord.split(" ");
-      //console.log(splitWord);
+      // create an array of vowels
+      let vowels = ['a', 'e', 'i', 'o', 'u']
+      let vowelIndex = 0
+      // if the word begins with vowel, then we just add "way" to the end
+      if (vowels.includes(currentWord[0])) {
+        currentWord += "way"
+      } else if (currentWord.includes("qu")) {
+        for(let i = 0; i < currentWord.length; i++) {
+          if (currentWord[i + 1] === 'u') {
+            // assume that a vowel follows 'qu'
+            vowelIndex = i + 2
+            currentWord = currentWord.slice(vowelIndex) + currentWord.slice(0,vowelIndex) + "ay"
+            break
+          }
+        }
+      } else if (!vowels.includes(currentWord[0])) {
+        for (let i = 0; i < currentWord.length; i++) {
+          if (vowels.includes(currentWord[i])) {
+            vowelIndex = i
+            currentWord = currentWord.slice(vowelIndex) + currentWord.slice(0,vowelIndex) + "ay"
+            break
+          } 
+        }
+      } 
       // we map through the letters to find what we are looking for
       // we need a placeholder for the array of letters
       // after we manipulate the letters into a new word
       // then we can push that back into the array of strings
 
-      // if the word begins with vowel, then we just add "way" to the end
 
       // if the word begins with a consonant, then we find the first vowel and move the first set of letters to the end of the word, and add "ay" to the end of the word
 
