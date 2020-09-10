@@ -46,6 +46,7 @@ class App extends Component {
       if (vowels.includes(currentWord[0])) {
         currentWord += "way"
       } else if (currentWord.includes("qu")) {
+        // if the word begin with "QU", then we find the first vowel after "QU", move the letters before the vowel to the end of the word, and add "ay" to the end of the words
         for(let i = 0; i < currentWord.length; i++) {
           if (currentWord[i + 1] === 'u') {
             // assume that a vowel follows 'qu'
@@ -55,25 +56,32 @@ class App extends Component {
           }
         }
       } else if (!vowels.includes(currentWord[0])) {
-        for (let i = 0; i < currentWord.length; i++) {
-          if (vowels.includes(currentWord[i])) {
-            vowelIndex = i
-            currentWord = currentWord.slice(vowelIndex) + currentWord.slice(0,vowelIndex) + "ay"
-            break
-          } 
-        }
-      } 
-      // we map through the letters to find what we are looking for
-      // we need a placeholder for the array of letters
-      // after we manipulate the letters into a new word
-      // then we can push that back into the array of strings
+        // if the word begins with a consonant, then we find the first vowel and move the first set of letters to the end of the word, and add "ay" to the end of the word
+          if (currentWord.includes("y") && currentWord[0] !== 'y') {
+            // the last case is sometimes "y", then handle case for hard 'y' and soft 'y', where 'y' can either be like a vowel or consonant
+            // first appearance of a 'y' appears before a vowel, and is a consonant
+            for(let i = 0; i < currentWord.length; i++) {
+              // if the word contains a 'y' or includes a vowel
+              if (currentWord[i] === 'y' || vowels.includes(currentWord[i])) {
+                // assume that a vowel follows 'qu'
+                vowelIndex = i
+                currentWord = currentWord.slice(vowelIndex) + currentWord.slice(0,vowelIndex) + "ay"
+                break
+              }
+            }
+            console.log(currentWord);
+          } else {
+            for (let i = 0; i < currentWord.length; i++) {
+              if (vowels.includes(currentWord[i])) {
+                vowelIndex = i
+                currentWord = currentWord.slice(vowelIndex) + currentWord.slice(0,vowelIndex) + "ay"
+                break
+              }
+            }
+          }
+      }
 
 
-      // if the word begins with a consonant, then we find the first vowel and move the first set of letters to the end of the word, and add "ay" to the end of the word
-
-      // if the word begin with "QU", then we find the first vowel after "QU", move the letters before the vowel to the end of the word, and add "ay" to the end of the words
-
-      // the last case is sometimes "y", then handle case for hard 'y' and soft 'y', where 'y' can either be like a vowel or consonant
 
       // Remember: console.log is your friend :)
 
