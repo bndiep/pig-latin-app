@@ -56,7 +56,6 @@ class App extends Component {
           }
         }
       } else if (!vowels.includes(currentWord[0])) {
-        // if the word begins with a consonant, then we find the first vowel and move the first set of letters to the end of the word, and add "ay" to the end of the word
           if (currentWord.includes("y") && currentWord[0] !== 'y') {
             // the last case is sometimes "y", then handle case for hard 'y' and soft 'y', where 'y' can either be like a vowel or consonant
             // first appearance of a 'y' appears before a vowel, and is a consonant
@@ -71,6 +70,7 @@ class App extends Component {
             }
             console.log(currentWord);
           } else {
+            // if the word begins with a consonant, then we find the first vowel and move the first set of letters to the end of the word, and add "ay" to the end of the word
             for (let i = 0; i < currentWord.length; i++) {
               if (vowels.includes(currentWord[i])) {
                 vowelIndex = i
@@ -131,7 +131,7 @@ class App extends Component {
         <h1>Pig Latin Translator</h1>
           <div id="pigImage">
             <img
-              src="https://lh3.googleusercontent.com/QvvsRY5ShwDNEouVMK8_z7QCwS3grkgd4mzZOlom23Hurralk54ObvsyEMM8ZSNR5pEFBeBMzltzEEcgi2llYJnhXTuXClN3njmMjtw3vgn8Go5jr40fHMNzfI64eYRrnHbZUutxCA=w2400"
+              src="https://cdn.pixabay.com/photo/2020/08/12/19/35/pig-5483534_1280.jpg"
               alt="pig with butcher cut names in pig latin"
               id="butcherPig"
             />
@@ -155,7 +155,7 @@ class App extends Component {
             {/* where the translated phrase will display */}
             <p>{ this.state.phraseTranslated }</p>
           </div>
-        <footer>Coded by ~your name here~</footer>
+        <footer>Coded by Chuck and Bach</footer>
       </React.Fragment>
     )
   }

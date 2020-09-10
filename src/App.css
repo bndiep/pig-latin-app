@@ -1,25 +1,34 @@
 body{
   margin: 2em;
   font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Long Cang', cursive;
   align-items: center;
   text-align: center;
+  text-shadow: 5px 5px 5px grey;
+  background-color: #edd9d5;
 }
 h1{
   text-align: center;
-  font-size: 4em;
+  font-size: 6em;
+}
+h4{
+  font-size: 2em;
+  text-shadow: 3px 3px 3px black
 }
 button{
   margin: 1em;
-  border-radius: .25em;
+  border-radius: 10px;
   font-size: 75%;
   padding: 1em;
+  background-color: lightskyblue;
 }
 footer{
   padding: 2em;
+  font-size: 25px;
 }
 
 #butcherPig{
-  width: 12em;
+  width: 20em;
   }
 #pigImage{
   text-align: center;
@@ -29,6 +38,7 @@ footer{
   height: 5em;
   width: 20em;
   text-align: center;
+  border-radius: 10px;
 }
 
 .box{
