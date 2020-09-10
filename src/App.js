@@ -9,8 +9,10 @@ class App extends Component {
       // 'phrase' is the text entered by the user - right now there are some test words hard coded to make the process of testing your code a bit faster and easier
       // ACTION ITEM: when you are ready for your full user experience, delete the test words so phrase is assigned an empty string
       phrase: 'every through yummy squeal queen fry',
+      // phrase: '',
       // 'phraseTranslated' is what the user will see appear on the page as Pig Latin, it starts as the preset message and updates when your user clicks the 'submit' button
-      phraseTranslated: 'This is where your translated sentence will appear.'
+      //phraseTranslated: 'This is where your translated sentence will appear.'
+      phraseTranslated: ''
     }
   }
 
@@ -25,6 +27,9 @@ class App extends Component {
     // no need to change this variable
     let translatedWordsArray = []
 
+    // need array to temporarily hold our split strings
+    let splitWord = []
+
     // taking the user input and spliting the text into an array of words
     let splitUserInput = userInput.toLowerCase().split(" ")
 
@@ -32,8 +37,40 @@ class App extends Component {
     splitUserInput.map(currentWord => {
       // ACTION ITEM: use 'currentWord' as a starting point for your code
 
+      // At this point we already have an array of words from the user input starting
+      // we should map through all the elements of this array and modify them by applying our pig lating Translator
 
-      // your code here!
+      // first we break the string into an array of letters
+      // currentWord.split(" ");
+
+      if (currentWord[0] === 'a' || currentWord[0] === 'e' || currentWord[0] === 'i' || currentWord[0] === 'o' || currentWord[0] === 'u') {
+        // console.log(currentWord + "way");
+        currentWord += "way";
+      }
+      
+      // for (let i = 0; i < currentWord.length; i++) {
+      //   if (currentWord[i] !== 'a' && currentWord[i] !== 'e' && currentWord[i] !== 'i' && currentWord[i] !== 'o' && currentWord[i] !== 'u') {
+      //
+      //   }
+      // }
+      // currentWord.map(letter, index => {
+      //
+      // })
+      //splitWord = currentWord.split(" ");
+      //splitWord.split(" ");
+      //console.log(splitWord);
+      // we map through the letters to find what we are looking for
+      // we need a placeholder for the array of letters
+      // after we manipulate the letters into a new word
+      // then we can push that back into the array of strings
+
+      // if the word begins with vowel, then we just add "way" to the end
+
+      // if the word begins with a consonant, then we find the first vowel and move the first set of letters to the end of the word, and add "ay" to the end of the word
+
+      // if the word begin with "QU", then we find the first vowel after "QU", move the letters before the vowel to the end of the word, and add "ay" to the end of the words
+
+      // the last case is sometimes "y", then handle case for hard 'y' and soft 'y', where 'y' can either be like a vowel or consonant
 
       // Remember: console.log is your friend :)
 
