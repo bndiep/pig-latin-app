@@ -1,30 +1,37 @@
 body{
-  margin: 2em;
   font-family: 'Josefin Sans', sans-serif;
-  font-family: 'Long Cang', cursive;
   align-items: center;
   text-align: center;
   text-shadow: 5px 5px 5px grey;
   background-color: #edd9d5;
 }
 h1{
+  font-family: 'Long Cang', cursive;
   text-align: center;
   font-size: 6em;
+  letter-spacing: 0.1em;
+}
+img{
+  border-radius: 38%;
 }
 h4{
-  font-size: 2em;
+  font-family: 'Long Cang', cursive;
+  font-size: 2.3em;
   text-shadow: 3px 3px 3px black
 }
 button{
   margin: 1em;
   border-radius: 10px;
+  border: none;
   font-size: 75%;
+  color: white;
   padding: 1em;
-  background-color: lightskyblue;
+  background-color: rgb(89, 22, 22);
 }
 footer{
   padding: 2em;
-  font-size: 25px;
+  font-size: 12px;
+  text-shadow: none;
 }
 
 #butcherPig{
@@ -39,14 +46,16 @@ footer{
   width: 20em;
   text-align: center;
   border-radius: 10px;
+  background-color: rgb(208, 208, 208);
 }
 
 .box{
-  background-color: #606060;
+  background-color: #797979;
   color: #fff;
   border-radius: .2em;
   padding: 1em;
   font-size: 150%;
+  margin-top: 2em;
 }
 .header{
   background-color: #FFF;
